@@ -1,0 +1,35 @@
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    display: inline-block;
+}
+
+td {
+    width: 60px;
+    height: 60px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2em;
+}
+
+td.entryfield {
+    z-index: 0;
+    font-size: 2em;
+}
+
+td.selected {
+    background: rgba(63, 191, 121, 0.568);
+}
+
+td.disabled {
+    background: black;
+}
+
+.cluenum {
+    z-index: 100;
+    position: relative;
+    left: -22px;
+    top: -22px;
+    font-size: 0.5em;
+}

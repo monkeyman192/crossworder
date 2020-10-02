@@ -67,6 +67,10 @@ class Crossword {
         }
     }
 
+    set_letter_value(value, id) {
+        // Set the value of a letter at some location
+    }
+
     verify() {
         // Verify each of the underlying words.
         let valid = true;
@@ -74,10 +78,6 @@ class Crossword {
             valid &= word.verify();
         }
         return valid;
-    }
-
-    dummy() {
-        return "hello";
     }
 }
 
@@ -155,9 +155,15 @@ function drawGrid(rows, columns, data) {
         // Letters between A - Z
         if (keyCode > 64 && keyCode < 91) {
             for (let c of cells) {
-                console.log(c.id);
                 let inner = c.innerHTML;
-                c.innerHTML += String.fromCharCode(keyCode);
+                if (inner && inner.length === 0) {
+                    c.innerHTML += String.fromCharCode(keyCode);
+                } else if (inner && inner.slice(-1) === '>') {
+                    console.log("blah");
+                } else {
+                    c.innerHTML = String.fromCharCode(keyCode);
+                }
+                
             }
         // Esc key
         } else if (keyCode === 27) {
